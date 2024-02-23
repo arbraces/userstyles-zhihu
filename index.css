@@ -1,0 +1,217 @@
+/* ==UserStyle==
+@name           www.zhihu.com - 2024年2月
+@namespace      github.com/openstyles/stylus
+@version        0.1
+@description    知乎暗色模式
+@author         Chris chen
+==/UserStyle== */
+
+@-moz-document url-prefix("https://www.zhihu.com/") {
+    /* 在此插入代码... */
+    :root{
+        --background-color: #242424;
+        --text-color: rgb(249, 250, 251);
+        --filter-glass: blur(15px) saturate(180%);
+        --elevated-2: hsl(230 12% 20% / 60%);
+        --elevated-1: hsla(230, 4%, 24%, .6);
+        
+        --text-color: #8491a5;
+        --text-color-1: #f3f3f3;
+        --text-color-2: #eee;
+        --text-color-3: #e8e8e8;
+        --text-color-4: #ddd;
+        --text-color-5: #c6c6c6;
+        --text-color-6: #a6a6a6;
+        --text-color-7: #8b8b8b;
+        --text-color-8: #777;
+        --text-color-9: #5e5e5e;
+        --text-color-10: #4b4b4b;
+        --text-color-11: #393939;
+        --text-color-12: #2c2c2c;
+        --text-color-13: #242424;
+        --text-color-14: #181818;
+        
+        --border: 1px solid #4b4b4b;
+        
+        --theme-text-color: #6289c0;
+        
+        --box-shadow:rgba(255, 255, 255, 0.15) 0px 2px 5px 0px, rgba(255, 255, 255, 0.05) 0px 1px 1px 0px;
+    }
+    /*     背景色 */
+    body, .Card, .ContentItem-actions{
+        background-color: var(--background-color) !important;
+    }
+    .Card{
+        box-shadow: var(--box-shadow);
+    }
+    /*     -------------------------------导航栏start------------------------------- */
+    .AppHeader{
+        background: rgba(0, 0, 0, .0);
+        transition: .3s;
+    }
+    .AppHeader-inner, .TopstoryPageHeader{
+        backdrop-filter: var(--filter-glass) ;
+        background: var(--elevated-2);
+        border-radius: 50px;
+    }
+    .is-active{
+        color: var(--text-color-1) !important;
+    }
+    .AppHeader-TabsLink:hover{
+        color: var(--text-color-3) !important;
+    }
+    .TopstoryTabs-link{
+        color: var(--text-color) !important;
+    }
+    .TopstoryTabs-link:hover{
+        color: var(--text-color-3) !important;
+    }
+    /*     搜索框 */
+    .Input-wrapper{
+        backdrop-filter: var(--filter-glass) !important;
+        background: var(--elevated-2) !important;
+        border: var(--border);
+    }
+    /*     弹出菜单 */
+    .Popover-content, .Notifications-footer, .Messages-footer, .Popover-arrow:after{
+        background: var(--elevated-2) !important;
+        backdrop-filter: var(--filter-glass) !important;
+        border: none;
+    }
+    .Messages-item:hover{
+        background: var(--elevated-1) !important;
+    }
+    .Messages-userName, .Messages-header > button, .PushNotifications-item{
+        color: var(--text-color-3) !important;
+    }
+    .Messages-header, .PushNotifications-header{
+        border-bottom: var(--border) !important;
+    }
+    .PushNotifications-item a{
+        color: var(--theme-text-color) !important;
+    }
+    .PushNotifications-item:after{
+        background-color: #4b4b4b !important; 
+    }
+    /*     -------------------------------导航栏end------------------------------- */
+    
+    
+    
+    
+    /*     -------------------------------文章start------------------------------- */
+    .Topstory-tabs{
+        border-bottom: var(--border);
+    }
+    /*     文章标题 */
+    .ContentItem-title{
+        color: var(--text-color-4) !important;
+    }
+    /*     文章二级标题 */
+    .RichText{
+        color: var(--text-color-4) !important;
+    }
+    /*     文章关键字 */
+    .RichContent-EntityWord{
+        color: var(--theme-text-color) !important;
+    }
+    /*     文章下划线 */
+    .Topstory-mainColumnCard .Card:not(.Topstory-tabCard) {
+        border: var(--border);
+    }
+    /*     文章更多阅读全文 */
+    .ContentItem-more{
+        color: var(--theme-text-color) !important;
+    }
+    /*     -------------------------------文章end------------------------------- */
+    
+    
+    
+    
+    
+    /*     -------------------------------文章评论区start------------------------------- */
+    /*     评论区字体颜色 */
+    .CommentContent, a{
+        color: var(--text-color-4) !important;
+    }
+    /*     文章下面评论 */
+    .Comments-container > div > div:nth-child(1) > div > div{
+        border: var(--border);
+    }
+    /*     评论区边框 */
+    .Comments-container > div > div:nth-child(2){
+        border: var(--border);
+        
+    }
+    /*     评论区xxx条评论字体颜色 */
+    .Comments-container > div > div:nth-child(2) > div > div:nth-child(1){
+        color: var(--text-color-1) !important ;
+        
+    }
+    /*     评论区 |默认|最新| 颜色*/
+    .Comments-container > div > div:nth-child(2) > div > div:nth-child(3){
+        color: var(--text-color-1) !important;
+        background: var(--elevated-2) !important;
+        
+    }
+    /*     评论区发表评论 */
+    .Comments-container > div > div:nth-child(4){
+        backdrop-filter: var(--filter-glass) ;
+        background: var(--elevated-2);
+    }
+    /*     收起评论 */
+    .Comments-container > div > div:nth-child(4) > div > button{
+        backdrop-filter: var(--filter-glass) ;
+        background: var(--elevated-2);
+    }
+    .Comments-container > div > div:nth-child(4) > div > div > div{
+        border: var(--border) !important;
+    }
+    /*     -------------------------------文章评论区end------------------------------- */
+    
+    
+    
+    
+    /*     -------------------------------侧边栏start------------------------------- */
+    .QuestionHeader{
+        background: var(--background-color);
+    }
+    .CreatorEntrance-indexPageTitle, .GlobalWriteV2-topTitle, .ProfileSideCreator-readCountNumber, .contentinfo, footer > div > div:nth-child(1) > div:nth-child(2){
+        color: var(--text-color) !important;
+    }
+    .GlobalSideBar-navLink:hover{
+        background: var(--background-color);
+    }
+    .Menu-divider{
+        border: var(--border);
+    }
+    /*     -------------------------------侧边栏end------------------------------- */
+    
+    
+    
+    
+    /*     -------------------------------文章详细页start------------------------------- */
+    .QuestionDescription{
+        background: rgb(41 42 48) !important;    
+    }
+    .QuestionHeader, .QuestionHeader-footer{
+        background: var(--background-color);
+    }
+    .QuestionHeader-title, .QuestionRichText, .Card-headerText, .NumberBoard-itemValue, .List-headerText{
+        color: var(--text-color-2) !important;
+    }
+    .ViewAll, .QuestionHeader-content{
+        backdrop-filter: var(--filter-glass) !important;
+        background: var(--elevated-2) !important;
+    }
+    .QuestionHeader-main{
+        padding-left: 0;
+    }
+    .List-header, .List-item+.List-item:after{
+        border: var(--border);
+    }
+    .QuestionHeader > .QuestionHeader-content{
+        background: var(--background-color) !important;
+    }
+    /*     -------------------------------文章详细页end------------------------------- */
+    
+}
